@@ -1,0 +1,34 @@
+* {
+  color: white;
+}
+
+.principal {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-areas:
+    "navegacao cabecalho"
+    "navegacao conteudo"
+    "navegacao rodape";
+}
+
+.navegacao {
+  grid-area: navegacao;
+  background-color: blue;
+}
+
+.cabecalho {
+  grid-area: cabecalho;
+  background-color: red;
+}
+
+.conteudo {
+  grid-area: conteudo;
+  background-color: pink;
+}
+
+.rodape {
+  grid-area: rodape;
+  background-color: black;
+}
