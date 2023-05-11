@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+  </head>
+  <body>
+    <form id="formNome">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" />
+
+      <label for="sobrenome">Sobrenome:</label>
+      <input type="text" id="sobrenome" />
+
+      <input type="button" id="salvar" value="Salvar" />
+      <input type="button" id="visualizar" value="Visualizar" />
+    </form>
+
+    <script>
+      const inputNome = document.getElementById("nome");
+      const inputSobrenome = document.querySelector("#sobrenome");
+      const btnSalvar = document.getElementById("salvar");
+      const btnVisualizar = document.getElementById("visualizar");
+
+      const nomeCompleto = {};
+
+      // ao clicar em salvar
+      btnSalvar.addEventListener("click", (event) => {
+        console.log(event);
+        console.log(typeof {});
+        // definir a chave nome com o valor do input nome
+        nomeCompleto.nome = inputNome.value;
+        // definir a chave sobrenome com o valor do input sobrenome
+        nomeCompleto.sobrenome = inputSobrenome.value;
+        // fazer a conversão do JSON para string
+        const strNomeCompleto = JSON.stringify(nomeCompleto);
+        // salvar no local storage
+        localStorage.setItem("nome", strnNomeCompleto);
+      });
+
+      function visualizar() {
+        //consultar o nome completo no local storage
+        const nomeStr = localstorage.getItem("item");
+        //converter em objeto
+        const objnome = JSON.parse(nomeStr);
+
+        //exibir em tela
+        const nomeFormatado = objnome.nome + " " + obj.sobrenome;
+
+        const elementoNome = document.createElement("p");
+        elementoNome.textContent = nomeFormatado;
+
+        document.getElementById("formNome").appendChild("elementoNome");
+      }
+
+      document
+        .getElementById("visualizar")
+        .addEventListener("click", visualizar);
+    </script>
+  </body>
+</html>
